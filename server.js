@@ -11,6 +11,7 @@ app.get("/search", async (req, res) => {
   }
 
   try {
+    console.log(encodeURIComponent(q));
     const targetUrl = `https://masothue.com/Search/?q=${encodeURIComponent(q)}&type=auto&token=&force-search=0`;
     const response = await fetch(targetUrl, {
       method: "GET",
